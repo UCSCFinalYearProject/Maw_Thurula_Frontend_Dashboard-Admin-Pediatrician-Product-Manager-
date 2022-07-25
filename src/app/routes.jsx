@@ -1,12 +1,11 @@
 import AuthGuard from 'app/auth/AuthGuard';
-import chartsRoute from 'app/views/charts/ChartsRoute';
-import dashboardRoutes from 'app/views/dashboard/DashboardRoutes';
-import materialRoutes from 'app/views/material-kit/MaterialRoutes';
 import NotFound from 'app/views/sessions/NotFound';
 import sessionRoutes from 'app/views/sessions/SessionRoutes';
 import { Navigate } from 'react-router-dom';
 import MatxLayout from './components/MatxLayout/MatxLayout';
 import AdminRoutes from "./views/Actors/admin/AdminRoutes";
+import AstrologerRoutes from "./views/Actors/astrologer/AstrologerRoutes";
+import NameProviderRoutes from "./views/Actors/name-provider/NameProviderRoutes";
 
 const routes = [
   {
@@ -15,7 +14,7 @@ const routes = [
         <MatxLayout />
       </AuthGuard>
     ),
-    children: [...dashboardRoutes, ...chartsRoute, ...materialRoutes,   ...AdminRoutes],
+    children: [...AdminRoutes, ...AstrologerRoutes,...NameProviderRoutes],
   },
   ...sessionRoutes,
   { path: '/', element: <Navigate to="/admin" /> },

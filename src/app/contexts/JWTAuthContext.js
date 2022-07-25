@@ -1,7 +1,8 @@
-import React, { createContext, useEffect, useReducer } from 'react'
+import  React, { createContext, useEffect, useReducer } from 'react'
 import jwtDecode from 'jwt-decode'
 import axios from 'axios.js'
 import { MatxLoading } from 'app/components'
+import {navigations_ADMIN, navigations_AL, navigations_NP, navigations_PM, navigations_PT} from "../navigations";
 
 const initialState = {
     isAuthenticated: false,
@@ -43,7 +44,8 @@ const reducer = (state, action) => {
         }
         case 'LOGIN': {
             const { user } = action.payload
-
+            console.log("--------------------------------------------------")
+            console.log( user )
             return {
                 ...state,
                 isAuthenticated: true,
@@ -82,6 +84,7 @@ const AuthContext = createContext({
 
 export const AuthProvider = ({ children }) => {
     const [state, dispatch] = useReducer(reducer, initialState)
+
 
     const login = async (email, password) => {
         const response = await axios.post('/api/auth/login', {
