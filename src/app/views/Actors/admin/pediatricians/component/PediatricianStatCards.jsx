@@ -14,6 +14,7 @@ import {
   TableRow,
   useTheme,
 } from '@mui/material';
+import {Grid} from '@mui/material';
 import { Paragraph } from 'app/components/Typography';
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward';
 import { Link } from "react-router-dom";
@@ -47,6 +48,8 @@ const ProductTable = styled(Table)(() => ({
   '& td:first-of-type': { paddingLeft: '16px !important' },
 }));
 
+
+
 const Small = styled('small')(({ bgcolor }) => ({
   width: 50,
   height: 15,
@@ -67,11 +70,16 @@ const PediatricianStatCards = () => {
   const bgSecondary = palette.secondary.main;
 
   return (
+
+
       <Card elevation={3} sx={{ pt: '20px', mb: 3 }}>
         <CardHeader>
           <Title> Pediatrician Requests </Title>
 
         </CardHeader>
+
+        <Grid container spacing={3}>
+          <Grid item lg={8} md={8} sm={12} xs={12}>
 
         <Box overflow="auto">
           <ProductTable>
@@ -106,13 +114,17 @@ const PediatricianStatCards = () => {
             </TableBody>
           </ProductTable>
         </Box>
+
+          </Grid>
+        </Grid>
+
       </Card>
   );
 };
 
 const mothersList = [
   {
-    name: 'Maduni Tharukshi',
+    name: 'Sanath Gamage',
 
   },
   {

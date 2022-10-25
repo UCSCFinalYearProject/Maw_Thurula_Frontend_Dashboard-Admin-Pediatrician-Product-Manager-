@@ -107,7 +107,7 @@ const AstrologerStatCards = () => {
 
 const mothersList = [
   {
-    name: 'Maduni Tharukshi',
+    name: 'Kamal Dias',
 
   },
   {

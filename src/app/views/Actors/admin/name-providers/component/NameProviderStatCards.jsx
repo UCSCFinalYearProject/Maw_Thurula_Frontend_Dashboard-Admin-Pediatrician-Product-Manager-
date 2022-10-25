@@ -107,7 +107,7 @@ const NameProviderStatCards = () => {
 
 const mothersList = [
   {
-    name: 'Maduni Tharukshi',
+    name: 'Wimal Perera',
 
   },
   {
